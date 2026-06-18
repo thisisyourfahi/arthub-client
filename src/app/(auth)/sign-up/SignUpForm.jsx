@@ -22,15 +22,16 @@ export default function SignUpForm() {
     const onSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget)
-        const {name, email, image, password} = Object.fromEntries(formData.entries());
+        const {name, email, image, password, role} = Object.fromEntries(formData.entries());
         
         const {data, error} = await authClient.signUp.email({
-            email, password, name, image
+            email, password, name, image, role
         })
 
         if (!error) {
             alert('Signup successfull!');
-            router.push('/')
+            // router.push('/')
+            window.location.href = '/'
         }
     }
 
@@ -125,21 +126,21 @@ export default function SignUpForm() {
                     </Radio.Content>
                 </Radio>
                 <Radio
-                    value="artisan"
+                    value="artist"
                     className="group data-[selected=true]:border-orange-500"
                 >
                     <Radio.Content className="group-data-[selected=true]:border-orange-500">
                         <Radio.Control>
                             <Radio.Indicator className="group-data-[selected=true]:bg-[#D8A33D] rounded-full" />
                         </Radio.Control>
-                        Artisan
+                        Artist
                     </Radio.Content>
                 </Radio>
                 <FieldError />
             </RadioGroup>
 
             <div className="flex gap-2">
-                <Button className={'rounded-md bg-[#D8A33D]'} type="submit">Signin</Button>
+                <Button className={'rounded-md bg-[#D8A33D]'} type="submit">Sign Up</Button>
                 <Button type="reset" variant="tertiary" className={'rounded-md'}>
                     Reset
                 </Button>

@@ -59,7 +59,7 @@ export default function SignInForm() {
             </TextField>
 
             <div className="flex gap-2">
-                <Button className={'rounded-md bg-[#D8A33D]'} type="submit">Login</Button>
+                <Button className={'rounded-md bg-[#D8A33D]'} type="submit">Sign In</Button>
             </div>
         </Form>
     );

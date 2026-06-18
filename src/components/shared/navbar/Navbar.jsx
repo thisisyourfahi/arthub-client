@@ -6,6 +6,7 @@ import Link from 'next/link';
 import React from 'react';
 import UserLoggedIn from './UserLoggedIn';
 import UserNotLoggedIn from './UserNotLoggedIn';
+import { getUserSession } from '@/lib/core/session';
 
 const Navbar = async () => {
     const links = [
@@ -13,12 +14,12 @@ const Navbar = async () => {
         { href: '/arts', label: 'Browse Arts' }
     ]
 
-    const session = await auth.api.getSession({
-        headers: await headers()
-    })
-    const user = session?.user
-
-    console.log('user data:', user);
+    // const session = await auth.api.getSession({
+    //     headers: await headers()
+    // })
+    // const user = session?.user
+    const user = await getUserSession();
+    console.log(user);
 
     return (
         <div className="navbar justify-between bg-base-100 shadow-sm text-[#D8A33D] mb-8 md:px-10">

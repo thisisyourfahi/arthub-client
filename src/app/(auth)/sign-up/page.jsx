@@ -6,7 +6,7 @@ const SignUpPage = () => {
         <div className='space-y-4'>
             <div className="flex flex-col gap-1 text-center text-[#D8A33D]">
                 <h1 className="text-2xl font-semibold ">Create your account</h1>
-                <p className="text-sm">Sign up to get started</p>
+                <p className="text-sm">Sign Up to get started</p>
             </div>
             <SignUpForm />
         </div>

@@ -23,10 +23,12 @@ const UserLoggedIn = ({ user }) => {
     return (
         <div className="dropdown dropdown-left md:dropdown-bottom">
             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                <div className="w-8 rounded-full">
-                    <Image width={10} height={10}
-                        alt={user?.name}
-                        src={user?.image} />
+                <div className="w-8 rounded-full flex items-center justify-center">
+                    {
+                        user?.image ? <Image width={10} height={10}
+                            alt={user?.name}
+                            src={user?.image} /> : <p className='text-2xl'>{user?.name[0]}</p>
+                    }
                 </div>
             </div>
             <ul
@@ -36,6 +38,10 @@ const UserLoggedIn = ({ user }) => {
 
                 <li>
                     <Link href={'/profile'}>Profile</Link>
+                </li>
+                <li>
+
+                    <Link href={`/dashboard/${user?.role}`}>Dashboard</Link>
                 </li>
                 <li>
 

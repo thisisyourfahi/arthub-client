@@ -1,5 +1,6 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import {
     Form,
     TextField,
@@ -13,8 +14,16 @@ export default function SignInForm() {
     const onSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget)
-        const formInfo = Object.fromEntries(formData.entries());
-        console.log(formInfo);
+        const {name, email, image, password} = Object.fromEntries(formData.entries());
+
+        const {data, error} = await authClient.signIn.email({
+            email, password
+        })
+        if (!error) {
+            alert('Welcome to ArtHub!')
+        } else {
+            alert(error.message)
+        }
     }
     return (
         <Form

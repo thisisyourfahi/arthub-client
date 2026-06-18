@@ -12,6 +12,7 @@ import {
     FieldError,
     Button,
 } from "@heroui/react";
+import { authClient } from "@/lib/auth-client";
 
 export default function SignUpForm() {
     const [password, setPassword] = useState("");
@@ -19,8 +20,12 @@ export default function SignUpForm() {
     const onSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget)
-        const formInfo = Object.fromEntries(formData.entries());
-        console.log(formInfo);
+        const {name, email, image, password} = Object.fromEntries(formData.entries());
+        
+        const {data, error} = await authClient.signUp.email({
+            email, password, name, image
+        })
+        console.log({data, error})
     }
 
     return (
@@ -29,7 +34,7 @@ export default function SignUpForm() {
             render={(props) => <form {...props} data-custom="signup" />}
             onSubmit={onSubmit}
         >
-            <TextField isRequired name="fullName" type="text">
+            <TextField isRequired name="name" type="text">
                 <Label className="text-[#D8A33D]">Full Name</Label>
                 <Input className={'rounded-md'} placeholder="John Doe" />
                 <FieldError />
@@ -51,7 +56,7 @@ export default function SignUpForm() {
                 <FieldError />
             </TextField>
 
-            <TextField name="imageUrl" type="url">
+            <TextField name="image" type="url">
                 <Label className="text-[#D8A33D]">Profile Image URL</Label>
                 <Input className={'rounded-md'} placeholder="https://example.com/avatar.jpg" />
                 <FieldError />

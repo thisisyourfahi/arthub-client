@@ -9,18 +9,23 @@ import {
     FieldError,
     Button,
 } from "@heroui/react";
+import { useRouter } from "next/navigation";
 
 export default function SignInForm() {
+    const router = useRouter();
+
     const onSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget)
-        const {name, email, image, password} = Object.fromEntries(formData.entries());
+        const { name, email, image, password } = Object.fromEntries(formData.entries());
 
-        const {data, error} = await authClient.signIn.email({
+        const { data, error } = await authClient.signIn.email({
             email, password
         })
         if (!error) {
             alert('Welcome to ArtHub!')
+            // router.push('/')
+            window.location.href = '/'
         } else {
             alert(error.message)
         }
@@ -54,7 +59,7 @@ export default function SignInForm() {
             </TextField>
 
             <div className="flex gap-2">
-                <Button className={'rounded-md bg-[#D8A33D]'} type="submit">Submit</Button>
+                <Button className={'rounded-md bg-[#D8A33D]'} type="submit">Login</Button>
             </div>
         </Form>
     );

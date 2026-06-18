@@ -13,9 +13,11 @@ import {
     Button,
 } from "@heroui/react";
 import { authClient } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
 
 export default function SignUpForm() {
     const [password, setPassword] = useState("");
+    const router = useRouter();
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -25,7 +27,11 @@ export default function SignUpForm() {
         const {data, error} = await authClient.signUp.email({
             email, password, name, image
         })
-        console.log({data, error})
+
+        if (!error) {
+            alert('Signup successfull!');
+            router.push('/')
+        }
     }
 
     return (
@@ -133,7 +139,7 @@ export default function SignUpForm() {
             </RadioGroup>
 
             <div className="flex gap-2">
-                <Button className={'rounded-md bg-[#D8A33D]'} type="submit">Submit</Button>
+                <Button className={'rounded-md bg-[#D8A33D]'} type="submit">Signin</Button>
                 <Button type="reset" variant="tertiary" className={'rounded-md'}>
                     Reset
                 </Button>

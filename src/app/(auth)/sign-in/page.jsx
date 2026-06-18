@@ -3,7 +3,11 @@ import SignInForm from './SignInForm';
 
 const SignInPage = () => {
     return (
-        <div>
+        <div className='space-y-4'>
+            <div className="flex flex-col gap-1 text-center text-[#D8A33D]">
+                <h1 className="text-2xl font-semibold ">Welcome Back</h1>
+                <p className="text-sm">Login with your credentials</p>
+            </div>
             <SignInForm />
         </div>
     );

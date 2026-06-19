@@ -19,7 +19,6 @@ const Navbar = async () => {
     // })
     // const user = session?.user
     const user = await getUserSession();
-    console.log(user);
 
     return (
         <div className="navbar justify-between bg-base-100 shadow-sm text-[#D8A33D] mb-8 md:px-10">

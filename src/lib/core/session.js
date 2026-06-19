@@ -22,3 +22,10 @@ export const requiredRole = async (role) => {
         redirect('/redirect/access-restricted')
     }
 }
+
+export const checkForUser = async () => {
+    const user = await getUserSession()
+    if (user) {
+        redirect('/redirect/already-logged-in');
+    }
+}

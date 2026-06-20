@@ -23,7 +23,7 @@ const Navbar = async () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
                         </svg>
                     </Button>
-                    <Dropdown.Popover className="min-w-[180px]">
+                    <Dropdown.Popover className="min-w-45">
                         <Dropdown.Menu>
                             {links.map((li) => (
                                 <Dropdown.Item key={li.href} id={li.href} textValue={li.label}>

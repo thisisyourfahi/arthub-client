@@ -164,7 +164,7 @@ const AddArtworkForm = ({ user }) => {
                 />
 
                 {imageUrl ? (
-                    <div className="flex items-center gap-3 rounded-xl border border-white/[0.06] bg-[#1c1c1e] p-3">
+                    <div className="flex items-center gap-3 rounded-xl border border-white/6 bg-[#1c1c1e] p-3">
                         <Image width={64} height={64} src={imageUrl} alt="Artwork preview" className="rounded-md object-cover" />
                         <span className="flex-1 truncate text-sm text-white/60">{imageUrl}</span>
                         <Button variant="ghost" size="sm" isIconOnly onPress={handleRemoveImage}>

@@ -131,7 +131,7 @@ function Sidebar({
   side = "left",
   variant = "sidebar",
   collapsible = "offcanvas",
-  className,
+  className = 'mt-18',
   children,
   dir,
   ...props

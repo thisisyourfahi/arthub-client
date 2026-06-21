@@ -14,7 +14,7 @@ const ArtCard = ({ art }) => {
     } = art;
 
     return (
-        <Card className="relative h-75 w-100 overflow-hidden">
+        <Card className="relative h-75 md:w-90 lg:w-100 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-[#D8A33D]/50 hover:shadow-lg">
             <Image
                 width={400}
                 height={300}
@@ -45,7 +45,7 @@ const ArtCard = ({ art }) => {
                 <Link href={`/arts/${_id}`}>
                     <Button
                         size="sm"
-                        className="bg-white text-black"
+                        className="bg-[#D8A33D]"
                         variant="tertiary"
                     >
                         View

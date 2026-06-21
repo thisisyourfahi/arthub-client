@@ -19,6 +19,7 @@ import { Paperclip, TrashBin } from "@gravity-ui/icons";
 import { getUserSession } from "@/lib/core/session";
 import Image from "next/image";
 import { addArtwork } from "@/lib/actions/artworks";
+import { useRouter } from "next/navigation";
 
 const CATEGORIES = [
     { id: "painting", name: "Painting" },
@@ -35,6 +36,7 @@ const labelClass = "text-[#D8A33D]";
 
 const AddArtworkForm = ({ user }) => {
     const fileInputRef = useRef(null);
+    const router = useRouter();
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
@@ -109,8 +111,10 @@ const AddArtworkForm = ({ user }) => {
         console.log(res);
         if (res.acknowledged) {
             toast.success('Artwork Uploaded Successfully!');
+            // router.refresh();
+            window.location.href = '/dashboard/artist/manage-artworks/add'
         } else {
-            alert('Something went wrong. Please try again later.')
+            toast('Something went wrong. Please try again later.')
         }
     };
 

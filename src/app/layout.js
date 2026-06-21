@@ -2,6 +2,7 @@ import { Playfair_Display, Work_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/navbar/Navbar";
 import Footer from "@/components/shared/footer/Footer";
+import { Toast } from "@heroui/react";
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         <Footer />
+        <Toast.Provider />
       </body>
     </html>
   );

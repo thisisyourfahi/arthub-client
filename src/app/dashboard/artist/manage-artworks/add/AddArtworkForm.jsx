@@ -13,10 +13,12 @@ import {
     Spinner,
     TextArea,
     TextField,
+    toast,
 } from "@heroui/react";
 import { Paperclip, TrashBin } from "@gravity-ui/icons";
 import { getUserSession } from "@/lib/core/session";
 import Image from "next/image";
+import { addArtwork } from "@/lib/actions/artworks";
 
 const CATEGORIES = [
     { id: "painting", name: "Painting" },
@@ -99,11 +101,17 @@ const AddArtworkForm = ({ user }) => {
         const formInfo = Object.fromEntries(formData.entries());
         const newArtworkData = {
             ...formInfo,
-            imageUrl: imageUrl,
+            imageUrl: imageUrl || '',
             artistId: user?.id,
             status: 'Available'
         }
-        console.log('with url:', newArtworkData)
+        const res = await addArtwork(newArtworkData);
+        console.log(res);
+        if (res.acknowledged) {
+            toast.success('Artwork Uploaded Successfully!');
+        } else {
+            alert('Something went wrong. Please try again later.')
+        }
     };
 
     return (

@@ -42,7 +42,7 @@ const UserLoggedIn = ({ user }) => {
                     <Avatar.Fallback>{user?.name?.[0] ?? 'U'}</Avatar.Fallback>
                 </Avatar>
             </Dropdown.Trigger>
-            <Dropdown.Popover className="min-w-[180px]">
+            <Dropdown.Popover className="min-w-45">
                 <Dropdown.Menu onAction={handleAction}>
                     <Dropdown.Item id="profile" textValue="Profile">Profile</Dropdown.Item>
                     <Dropdown.Item id="dashboard" textValue="Dashboard">Dashboard</Dropdown.Item>

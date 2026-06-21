@@ -1,17 +1,17 @@
 import React from "react";
 import { Card, Button } from "@heroui/react";
 import Image from "next/image";
+import Link from "next/link";
 
 const ArtCard = ({ art }) => {
     const {
+        _id,
         title,
         price,
         imageUrl,
         category,
         status,
     } = art;
-
-    console.log(imageUrl);
 
     return (
         <Card className="relative h-75 w-100 overflow-hidden">
@@ -42,14 +42,15 @@ const ArtCard = ({ art }) => {
                         </span>
                     </div>
                 </div>
-
-                <Button
-                    size="sm"
-                    className="bg-white text-black"
-                    variant="tertiary"
-                >
-                    View
-                </Button>
+                <Link href={`/arts/${_id}`}>
+                    <Button
+                        size="sm"
+                        className="bg-white text-black"
+                        variant="tertiary"
+                    >
+                        View
+                    </Button>
+                </Link>
             </Card.Footer>
         </Card>
     );

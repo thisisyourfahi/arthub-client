@@ -9,3 +9,7 @@ export const getArtworksByArtistId = async (artistId) => {
 export const getArtworks = async () => {
     return serverFetch(`/api/artworks`);
 }
+
+export const getArtworkById = async (artId) => {
+    return serverFetch(`/api/artworks?artId=${artId}`);
+}

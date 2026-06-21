@@ -1,8 +1,14 @@
 import React from 'react';
 import DontHaveAnyArtworks from './DontHaveAnyArtworks';
+import ArtworksTableContainer from './ArtworksTableContainer';
+import { getUserSession } from '@/lib/core/session';
+import { getArtworksByArtistId } from '@/lib/api/artwork';
+
 
 const ManageArtworksPage = async () => {
-    const artworks = [];
+    const user = await getUserSession();
+    const artworks = await getArtworksByArtistId(user?.id);
+
     return (
         <div className='space-y-4'>
             <div className="flex flex-col gap-1 text-[#D8A33D]">
@@ -12,7 +18,7 @@ const ManageArtworksPage = async () => {
 
             {
                 artworks.length === 0 ? <DontHaveAnyArtworks /> : <>
-                    <p>Display Table</p>
+                    <ArtworksTableContainer artworks={artworks} />
                 </>
             }
         </div>

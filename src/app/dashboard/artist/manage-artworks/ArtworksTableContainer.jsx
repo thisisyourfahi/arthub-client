@@ -1,5 +1,9 @@
 import React from "react";
-import { Table } from "@heroui/react";
+import { Button, Table } from "@heroui/react";
+import { Eye, Pencil, TrashBin } from "@gravity-ui/icons";
+import Link from "next/link";
+import EditArtworkModal from "./edit/EditArtworkModal";
+import DeleteArtworkModal from "./delete/DeleteArtworkModal";
 
 const ArtworksTableContainer = async ({ artworks }) => {
     return (
@@ -44,8 +48,15 @@ const ArtworksTableContainer = async ({ artworks }) => {
                                     ).toLocaleDateString()}
                                 </Table.Cell>
 
-                                <Table.Cell>
+                                <Table.Cell className={'flex gap-2'}>
                                     {/* CTA Component will go here later */}
+                                    <Link href={`/arts/${artwork._id}`}>
+                                        <Button className={'bg-[#D8A33D]'}>
+                                            <Eye />
+                                        </Button>
+                                    </Link>
+                                    <EditArtworkModal art={artwork} />
+                                    <DeleteArtworkModal art={artwork}/>
                                 </Table.Cell>
                             </Table.Row>
                         ))}

@@ -28,7 +28,7 @@ const AboutPage = () => {
             <div className="text-center">
                 <h1 className="text-3xl font-semibold sm:text-4xl">
                     About{" "}
-                    <span className="text-[#D8A33D] transition-colors duration-300 hover:text-[#c0922e]">
+                    <span className="text-[#D8A33D] transition-colors duration-300 hover:text-[#ffae00]">
                         ArtHub
                     </span>
                 </h1>

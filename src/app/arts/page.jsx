@@ -1,10 +1,14 @@
 import ArtworkListingContainer from '@/components/arts/ArtworkListingContainer';
-import NoArts from '@/components/arts/NoArts';
 import { getArtworks } from '@/lib/api/artwork';
 import React from 'react';
 
-const ArtsPage = async () => {
-    const artworks = await getArtworks();
+const ArtsPage = async ({ searchParams }) => {
+    const filters = await searchParams;
+    console.log('Filters:', filters);
+    const searchQuery = new URLSearchParams(filters);
+    const queryString = searchQuery.toString();
+
+    const artworks = await getArtworks(queryString);
 
     return (
         <div className='space-y-4 max-w-7xl mx-auto'>
@@ -13,9 +17,7 @@ const ArtsPage = async () => {
                 <p className="text-sm text-[#866c3c]">Browse through the collection. Leave comments to encourage artists!</p>
             </div>
 
-            {
-                artworks.length === 0 ? <NoArts /> : <ArtworkListingContainer initialArts={artworks} />
-            }
+            <ArtworkListingContainer filters={filters} initialArts={artworks} />
         </div>
     );
 };

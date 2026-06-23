@@ -6,8 +6,8 @@ export const getArtworksByArtistId = async (artistId) => {
     return serverFetch(`/api/my/artworks/${artistId}`);
 }
 
-export const getArtworks = async () => {
-    return serverFetch(`/api/artworks`);
+export const getArtworks = async (query = '') => {
+    return serverFetch(`/api/artworks?${query}`);
 }
 
 export const getArtworkById = async (artId) => {

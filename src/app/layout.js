@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       data-theme="dark"
-      lang="en"
+      lang="en" suppressHydrationWarning
       className={`${workSans.variable} h-full dark antialiased`}
     >
       <body className="min-h-full flex flex-col">

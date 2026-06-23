@@ -7,7 +7,7 @@ import DeleteArtworkModal from "./delete/DeleteArtworkModal";
 
 const ArtworksTableContainer = async ({ artworks }) => {
     return (
-        <Table aria-label={undefined}>
+        <Table aria-label="Artist artworks table" >
             <Table.ScrollContainer>
                 <Table.Content aria-label="Artist artworks table" className="min-w-200">
                     <Table.Header >
@@ -45,7 +45,7 @@ const ArtworksTableContainer = async ({ artworks }) => {
                                 <Table.Cell>
                                     {new Date(
                                         artwork.createdAt
-                                    ).toLocaleDateString()}
+                                    ).toLocaleDateString('en-US')}
                                 </Table.Cell>
 
                                 <Table.Cell className={'flex gap-2'}>

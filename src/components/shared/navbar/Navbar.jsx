@@ -9,7 +9,8 @@ import { getUserSession } from '@/lib/core/session';
 const Navbar = async () => {
     const links = [
         { href: '/', label: 'Home' },
-        { href: '/arts', label: 'Browse Arts' }
+        { href: '/arts', label: 'Browse Arts' }, 
+        { href: '/pricing', label: 'Pricing' },
     ]
 
     const user = await getUserSession();

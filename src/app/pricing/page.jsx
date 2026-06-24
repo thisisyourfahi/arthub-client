@@ -6,6 +6,7 @@ import { Card, Button, Chip } from "@heroui/react";
 const pricingPlans = [
     {
         name: "Free",
+        id: 'arthub_free',
         badge: "Default",
         price: "$0",
         limit: "3 paintings",
@@ -15,6 +16,8 @@ const pricingPlans = [
     },
     {
         name: "Pro",
+        id: 'arthub_pro',
+        badge: "Most Popular",
         price: "$9.99",
         limit: "9 paintings",
         buttonText: "Upgrade to Pro",
@@ -22,6 +25,7 @@ const pricingPlans = [
     },
     {
         name: "Premium",
+        id: 'arthub_premium',
         badge: "Best Value",
         price: "$19.99",
         limit: "Unlimited",
@@ -50,8 +54,8 @@ const PricingPage = () => {
                         <Card
                             key={plan.name}
                             className={`p-8 border transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl ${plan.popular
-                                    ? "border-[#D8A33D] bg-zinc-900"
-                                    : "border-zinc-800 bg-zinc-950"
+                                ? "border-[#D8A33D] bg-zinc-900"
+                                : "border-zinc-800 bg-zinc-950"
                                 }`}
                         >
                             <div className="flex flex-col items-center gap-3">
@@ -94,13 +98,22 @@ const PricingPage = () => {
                                     </p>
                                 </div>
 
-                                <Button 
+                                <form action="/api/checkout_sessions" method="POST">
+                                    <input type='hidden' name='plan_id' value={plan.id} />
+                                    <section>
+                                        <Button type="submit" role="link">
+                                            Checkout
+                                        </Button>
+                                    </section>
+                                </form>
+
+                                <Button
                                     isDisabled={plan.isDisabled}
                                     fullWidth
                                     size="lg"
                                     className={`mt-6 ${plan.popular
-                                            ? "bg-[#D8A33D] text-black font-semibold"
-                                            : "bg-zinc-800 text-white"
+                                        ? "bg-[#D8A33D] text-black font-semibold"
+                                        : "bg-zinc-800 text-white"
                                         }`}
                                 >
                                     {plan.buttonText}

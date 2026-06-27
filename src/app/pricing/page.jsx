@@ -101,13 +101,13 @@ const PricingPage = () => {
                                 <form action="/api/checkout_sessions" method="POST">
                                     <input type='hidden' name='plan_id' value={plan.id} />
                                     <section>
-                                        <Button type="submit" role="link">
-                                            Checkout
+                                        <Button fullWidth className={'mt-4 bg-[#d8a33d] text-black'} type="submit" role="link" isDisabled={plan.isDisabled}>
+                                            {plan.buttonText}
                                         </Button>
                                     </section>
                                 </form>
 
-                                <Button
+                                {/* <Button
                                     isDisabled={plan.isDisabled}
                                     fullWidth
                                     size="lg"
@@ -117,7 +117,7 @@ const PricingPage = () => {
                                         }`}
                                 >
                                     {plan.buttonText}
-                                </Button>
+                                </Button> */}
                             </div>
                         </Card>
                     ))}

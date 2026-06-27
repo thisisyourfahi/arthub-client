@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server'
 import { headers } from 'next/headers'
 
 import { PLAN_PRICE_IDS, stripe } from '../../../lib/stripe'
+import { getUserSession } from '@/lib/core/session'
+import { toast } from '@heroui/react'
 
 export async function POST(request) {
     try {
@@ -12,9 +14,18 @@ export async function POST(request) {
         const planId = formData.get('plan_id');
         const productId = PLAN_PRICE_IDS[planId];
 
+        const user = await getUserSession();
+        if (!user) {
+            return NextResponse.json(
+                { error: 'User not authenticated. Please Sign in and try again.' },
+                { status: 401 }
+            )
+        }
+
 
         // Create Checkout Sessions from body params.
         const session = await stripe.checkout.sessions.create({
+            customer_email: user?.email,
             line_items: [
                 {
                     // Provide the exact Price ID (for example, price_1234) of the product you want to sell
@@ -23,6 +34,7 @@ export async function POST(request) {
                 },
             ],
             mode: 'payment',
+            metadata: {planId},
             success_url: `${origin}/pricing/success?session_id={CHECKOUT_SESSION_ID}`,
         });
         return NextResponse.redirect(session.url, 303)

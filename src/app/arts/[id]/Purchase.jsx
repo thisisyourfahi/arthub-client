@@ -17,7 +17,7 @@ const Purchase = ({ user, artist, art }) => {
             </div>
             <div className='flex flex-col items-center gap-2'>
                 <p className='text-xl font-semibold'>${price}</p>
-                <Button className={'bg-[#D8A33D]'} isDisabled={user.id === artist._id}>
+                <Button className={'bg-[#D8A33D]'} isDisabled={user?.id === artist?._id || !user}>
                     Buy Now
                 </Button>
             </div>

@@ -1,9 +1,11 @@
-import Navbar from "@/components/shared/navbar/Navbar";
-import Image from "next/image";
+import ArtsCarouselContainer from "@/components/homepage/ArtsCarouselContainer";
+import HeroSection from "@/components/homepage/HeroSection";
 
 export default function Home() {
   return (
-    <div>
+    <div className="space-y-8">
+      <HeroSection />
+      <ArtsCarouselContainer></ArtsCarouselContainer>
     </div>
   );
 }

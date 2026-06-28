@@ -14,15 +14,6 @@ const planLabels = {
 const ArtistProfilePage = async () => {
     const us = await getUserSession();
     const user = await getUserById(us?.id);
-    // const user = {
-    //     name: "Fahiyan Shah",
-    //     email: "fahiyanofficial@gmail.com",
-    //     emailVerified: false,
-    //     image: "https://i.ibb.co/YFPhXjjZ/1000003824.png",
-    //     createdAt: "2026-06-18T17:24:52.527Z",
-    //     role: "artist",
-    //     plan: "arthub_premium",
-    // };
 
     const joinedDate = new Date(user?.createdAt).toLocaleDateString('en-US', {
         year: 'numeric',

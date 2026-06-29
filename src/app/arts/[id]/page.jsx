@@ -4,15 +4,27 @@ import ArtDetails from './ArtDetails';
 import { getUserById } from '@/lib/api/user';
 import Purchase from './Purchase';
 import { getUserSession } from '@/lib/core/session';
+import SubscriptionDetails from '@/components/arts/SubscriptionDetails';
 
-const ArtDetailsPage = async ({params}) => {
-    const {id} = await params;
+const maximumPurchase = {
+    'arthub_free': 3,
+    'arthub_pro': 9,
+    'arthub_premium': 1000
+}
+
+const ArtDetailsPage = async ({ params }) => {
+    const { id } = await params;
     const art = await getArtworkById(id);
     const artist = await getUserById(art.artistId);
     const user = await getUserSession();
+    console.log(user);
     return (
         <div className='space-y-4'>
-            <Purchase art={art} artist={artist} user={user} />
+            <div className='space-y-4'>
+                {user && <SubscriptionDetails maxPurchase={maximumPurchase[user?.plan]} plan={user?.plan}  alreadyPurchasedCount={user?.purchaseArtworksId.length}/> }
+                <Purchase art={art} artist={artist} user={user} />
+            </div>
+
             <ArtDetails art={art} artist={artist} />
         </div>
     );

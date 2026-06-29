@@ -25,7 +25,7 @@ export default function SignUpForm() {
         const {name, email, image, password, role} = Object.fromEntries(formData.entries());
         
         const {data, error} = await authClient.signUp.email({
-            email, password, name, image, role, plan: `${role}_free`, purchaseArtworksId: [],
+            email, password, name, image, role, plan: `arthub_free`, purchaseArtworksId: [],
         })
 
         if (!error) {

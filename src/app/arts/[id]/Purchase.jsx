@@ -1,4 +1,3 @@
-import { TrashBin } from '@gravity-ui/icons';
 import { Button, Card } from '@heroui/react';
 import Image from 'next/image';
 import React from 'react';

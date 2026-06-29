@@ -2,7 +2,7 @@ import { Button, Card } from '@heroui/react';
 import Image from 'next/image';
 import React from 'react';
 
-const Purchase = ({ user, artist, art }) => {
+const Purchase = ({ user, artist, art, reachedPurchaseLimit }) => {
     const { imageUrl, title, category, price } = art
     return (
         <Card className='p-6 text-[#D8A33D] flex flex-row items-center justify-between'>
@@ -19,7 +19,7 @@ const Purchase = ({ user, artist, art }) => {
                 <form action='/api/checkout_sessions' method='POST'>
                     <input type='hidden' name='type' value={'artwork'}/>
                     <input type='hidden' name='artwork_id' value={art._id}></input>
-                    <Button type='submit' className={'bg-[#D8A33D]'} isDisabled={user?.id === artist?._id || !user}>
+                    <Button type='submit' className={'bg-[#D8A33D]'} isDisabled={user?.id === artist?._id || !user || art?.status !== 'Available' || reachedPurchaseLimit}>
                         Buy Now
                     </Button>
                 </form>

@@ -21,6 +21,8 @@ const ArtDetails = ({ art, artist }) => {
         _id,
     } = art;
 
+    console.log(art);
+
     return (
         <Card className="p-6">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -84,10 +86,10 @@ const ArtDetails = ({ art, artist }) => {
                         </div>
 
                         <Chip
-                            color={status === "Available" ? "success" : "default"}
+                            color={status === "Available" ? "success" : "danger"}
                             variant="soft"
                         >
-                            {status}
+                            {status.toUpperCase()}
                         </Chip>
                     </div>
 

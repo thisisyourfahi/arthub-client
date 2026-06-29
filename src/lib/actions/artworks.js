@@ -13,3 +13,7 @@ export const updateArtwork = async (id, data) => {
 export const deleteArtwork = async (id) => {
     return serverMutation(`/api/my/artworks/delete/${id}`, {}, 'DELETE');
 }
+
+export const purchaseArtwork = async (data) => {
+    return serverMutation('/api/purchase', data);
+}

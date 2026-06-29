@@ -1,13 +1,7 @@
+import { purchaseArtwork } from "@/lib/actions/artworks";
 import { stripe } from "@/lib/stripe";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-
-// TODO: Import your server action that grants the artwork to the user.
-// import { addPurchasedArtwork } from "@/lib/actions/artworks";
-
-// TODO: Import your function to fetch artwork details if you want
-// to display its title/image.
-// import { getArtworkById } from "@/lib/api/artwork";
 
 export default async function PurchaseSuccess({ searchParams }) {
     const { session_id } = await searchParams;
@@ -32,30 +26,11 @@ export default async function PurchaseSuccess({ searchParams }) {
         const buyerId = metadata.buyerId;
         console.log(artworkId, buyerId);
 
-        // ======================================================
-        // TODO:
-        // Save the purchase in your database.
-        //
-        // Example:
-        //
-        // await addPurchasedArtwork({
-        //     buyerId,
-        //     artworkId,
-        //     email: customerEmail,
-        // });
-        //
-        // This should:
-        // 1. Push artworkId into purchaseArtworksId
-        // 2. Increment purchasedArtworksCount
-        // 3. (Optional) Create a Purchase collection/document
-        // ======================================================
+        const purchaseInfo = {
+            artworkId, buyerId, price: metadata.price
+        }
 
-        // ======================================================
-        // OPTIONAL:
-        // Fetch artwork information if you'd like to display it.
-        //
-        // const artwork = await getArtworkById(artworkId);
-        // ======================================================
+        const res = await purchaseArtwork(purchaseInfo);
 
         return (
             <div className="min-h-screen bg-[#0a0a0f] flex items-center justify-center px-4">

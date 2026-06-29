@@ -65,7 +65,8 @@ export async function POST(request) {
                 metadata: {
                     type: 'artwork',
                     artworkId: artwork?._id,
-                    buyerId: user?.id
+                    buyerId: user?.id,
+                    price: artwork?.price
                 },
                 success_url: `${origin}/arts/purchase/success?session_id={CHECKOUT_SESSION_ID}`,
                 cancel_url: `${origin}/artworks/${artwork._id}`,

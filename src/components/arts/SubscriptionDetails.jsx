@@ -13,18 +13,8 @@ const SubscriptionDetails = ({
 
     return (
         <Card className="p-6 space-y-6">
-            {/* <div>
-                <h2 className="text-xl font-bold">
-                    Subscription Details
-                </h2>
-
-                <p className="text-default-500 text-sm mt-1">
-                    Track your artwork purchases.
-                </p>
-            </div> */}
-
             <div className="flex items-center justify-between">
-                <span className="text-default-500">Current Plan</span>
+                <span className="text-[#D8A33D]">Current Plan</span>
 
                 <Chip className="bg-[#d8a33d] text-black capitalize">
                     {plan.replace("arthub_", "")}
@@ -36,8 +26,8 @@ const SubscriptionDetails = ({
                 value={progress}
                 className="w-full"
             >
-                <div className="flex justify-between mb-2">
-                    <Label>Purchases Used</Label>
+                <div className="flex justify-between text-[#D8A33D] mb-2">
+                    <Label className="text-[#D8A33D]">Purchases Used</Label>
                     <ProgressBar.Output />
                 </div>
 
@@ -47,11 +37,11 @@ const SubscriptionDetails = ({
             </ProgressBar>
 
             <div className="flex justify-between text-sm">
-                <span className="text-default-500">
+                <span className="text-[#D8A33D]">
                     {alreadyPurchasedCount} / {maxPurchase} used
                 </span>
 
-                <span className="font-semibold">
+                <span className="font-semibold text-[#D8A33D]">
                     {Math.max(maxPurchase - alreadyPurchasedCount, 0)} remaining
                 </span>
             </div>
@@ -65,7 +55,7 @@ const SubscriptionDetails = ({
                     Youre close to your purchase limit.
                 </p>
             ) : (
-                <p className="text-success text-sm">
+                <p className="text-[#D8A33D] text-sm">
                     You can still purchase more artworks.
                 </p>
             )}

@@ -5,30 +5,30 @@ import Image from "next/image";
 import { Chip } from "@heroui/react";
 import { Eye } from "@gravity-ui/icons";
 
-const ArtistArtworks = ({ artworks }) => {
+const BoughtArtworks = ({ artworks }) => {
     if (!artworks?.length) {
         return (
-            <div className="py-20 text-center">
+            <div className="text-center">
                 <h2 className="text-2xl text-[#D8A33D] font-bold">
                     No artworks yet 🎨
                 </h2>
 
                 <p className="text-[#6e5018] mt-2">
-                    This artist hasn&apos;t published any artwork.
+                    You haven&apos;t bought any artwork.
                 </p>
             </div>
         );
     }
 
     return (
-        <section className="mt-16">
+        <section>
             <div className="mb-8">
                 <h2 className="text-3xl text-[#D8A33D] font-bold">
                     Artworks
                 </h2>
 
                 <p className="text-[#6e5018] mt-1">
-                    {artworks.length} published artwork
+                    {artworks.length} bought artwork
                     {artworks.length > 1 && "s"}
                 </p>
             </div>
@@ -92,4 +92,4 @@ const ArtistArtworks = ({ artworks }) => {
     );
 };
 
-export default ArtistArtworks;
+export default BoughtArtworks;

@@ -29,11 +29,11 @@ const ArtistInfo = ({ user, numberOfArtworks }) => {
             {/* Info */}
             <div className="text-center md:text-left space-y-3">
                 <div>
-                    <h1 className="text-4xl font-bold text-white">
+                    <h1 className="text-4xl font-bold text-[#D8A33D]">
                         {user.name}
                     </h1>
 
-                    <p className="text-default-500 mt-1">
+                    <p className="text-[#6e5018] mt-1">
                         {user.email}
                     </p>
                 </div>
@@ -50,7 +50,7 @@ const ArtistInfo = ({ user, numberOfArtworks }) => {
                     </Chip>
                 </div>
 
-                <p className="text-sm text-default-400">
+                <p className="text-sm text-[#6e5018]">
                     Joined on{" "}
                     <span className="text-default-200 font-medium">
                         {joinedOn}

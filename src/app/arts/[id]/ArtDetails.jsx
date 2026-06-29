@@ -53,7 +53,7 @@ const ArtDetails = ({ art, artist }) => {
 
                         <div className="flex flex-col">
                             <div className="flex items-center gap-2">
-                                <p className="font-medium text-default-900">
+                                <p className="font-medium text-[#D8A33D]">
                                     {artist?.name}
                                 </p>
 
@@ -66,7 +66,7 @@ const ArtDetails = ({ art, artist }) => {
                                 </Chip>
                             </div>
 
-                            <p className="text-xs text-default-500">
+                            <p className="text-xs text-[#6e5018]">
                                 View profile
                             </p>
                         </div>
@@ -76,11 +76,11 @@ const ArtDetails = ({ art, artist }) => {
                     {/* Title + Status */}
                     <div className="flex items-start justify-between gap-4">
                         <div>
-                            <h1 className="text-2xl font-bold text-default-900">
+                            <h1 className="text-2xl text-[#D8A33D] font-bold">
                                 {title}
                             </h1>
 
-                            <p className="mt-1 text-sm capitalize text-default-500">
+                            <p className="mt-1 text-sm capitalize text-[#6e5018]">
                                 {category}
                             </p>
                         </div>
@@ -99,11 +99,11 @@ const ArtDetails = ({ art, artist }) => {
 
                     {/* Price */}
                     <div>
-                        <p className="text-sm text-default-500">
+                        <p className="text-sm text-[#6e5018]">
                             Price
                         </p>
 
-                        <p className="text-xl font-semibold">
+                        <p className="text-xl font-semibold text-[#D8A33D]">
                             ${price}
                         </p>
                     </div>
@@ -111,11 +111,11 @@ const ArtDetails = ({ art, artist }) => {
 
                     {/* Description */}
                     <div>
-                        <p className="text-sm text-default-500">
+                        <p className="text-sm text-[#6e5018]">
                             Description
                         </p>
 
-                        <p className="mt-1 text-default-700">
+                        <p className="mt-1 text-[#D8A33D]">
                             {description || "No description available."}
                         </p>
                     </div>
@@ -128,20 +128,20 @@ const ArtDetails = ({ art, artist }) => {
                     <div className="grid grid-cols-1 gap-4 text-sm">
 
                         <div>
-                            <p className="text-default-500">
+                            <p className="text-[#6e5018]">
                                 Artwork ID
                             </p>
 
-                            <p className="font-medium break-all">
+                            <p className="font-medium text-[#D8A33D] break-all">
                                 {_id}
                             </p>
                         </div>
 
 
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center text-[#D8A33D] gap-2">
                             <Calendar />
 
-                            <p className="font-medium">
+                            <p className="font-medium ">
                                 {new Date(createdAt).toLocaleDateString()}
                             </p>
                         </div>

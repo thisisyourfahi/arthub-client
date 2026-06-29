@@ -31,7 +31,7 @@ const ArtistProfilePage = async () => {
                 <Card className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl shadow-xl p-10">
                     <div className="flex flex-col items-center gap-4">
                         <Image
-                            src={user.image}
+                            src={user.image || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2rFNJSKPLohcn_M4_oUGRIXub5q5GXPuOWg&s'}
                             alt={user.name}
                             referrerPolicy="no-referrer"
                             width={120}

@@ -30,7 +30,7 @@ const ArtCard = ({ art }) => {
 
                 <Card.Footer className="z-10 mt-auto flex items-end justify-between">
                     <div>
-                        <div className="text-base font-medium text-[#D8A33D] sm:text-lg">
+                        <div className="text-base font-medium text-white sm:text-lg">
                             {title}
                         </div>
 

@@ -69,14 +69,6 @@ export default async function PurchaseSuccess({ searchParams }) {
                         .
                     </p>
 
-                    {/* Optional */}
-                    {/* <p className="text-white mb-6">
-                        You now own{" "}
-                        <span className="text-[#d8a33d] font-semibold">
-                            {artwork.title}
-                        </span>
-                    </p> */}
-
                     <Link
                         href="/profile/purchases" // TODO: Replace with your purchases page
                         className="w-full py-2.5 rounded-xl bg-[#d8a33d] text-black font-semibold text-center"

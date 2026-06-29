@@ -9,3 +9,7 @@ export const getUserById = async (Id) => {
 export const getAllArtists = async() => {
     return serverFetch('/api/users?role=artist');
 }
+
+export const getUsersPurchaseHistory = async (id) => {
+    return serverFetch(`/api/purchase?bueryId=${id}`)
+}

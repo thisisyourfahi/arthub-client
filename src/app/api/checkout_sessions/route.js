@@ -4,6 +4,7 @@ import { headers } from 'next/headers'
 import { PLAN_PRICE_IDS, stripe } from '../../../lib/stripe'
 import { getUserSession } from '@/lib/core/session'
 import { toast } from '@heroui/react'
+import { redirect } from 'next/navigation'
 
 export async function POST(request) {
     try {
@@ -16,10 +17,7 @@ export async function POST(request) {
 
         const user = await getUserSession();
         if (!user) {
-            return NextResponse.json(
-                { error: 'User not authenticated. Please Sign in and try again.' },
-                { status: 401 }
-            )
+            return NextResponse.redirect(new URL('/redirect/log-in-first', request.url));
         }
 
 

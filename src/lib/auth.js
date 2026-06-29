@@ -19,7 +19,13 @@ export const auth = betterAuth({
                 type: ['user', 'artist'],
                 required: true,
                 input: true
-            }
+            },
+            plan: {
+                type: 'string'
+            },
+            purchaseArtworksId: {
+                type: 'string[]'
+            },
         }
     }
 });

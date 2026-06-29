@@ -76,7 +76,7 @@ function ArtistCard({
                 : "#c98552";
 
     return (
-        <Link href={`/artist/${artist._id}`}>
+        <Link href={`/artists/${artist._id}`}>
             <div
                 className={`
             relative

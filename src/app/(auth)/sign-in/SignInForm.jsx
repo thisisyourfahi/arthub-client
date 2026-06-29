@@ -17,7 +17,7 @@ export default function SignInForm() {
     const onSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget)
-        const { name, email, image, password } = Object.fromEntries(formData.entries());
+        const { email, password } = Object.fromEntries(formData.entries());
 
         const { data, error } = await authClient.signIn.email({
             email, password

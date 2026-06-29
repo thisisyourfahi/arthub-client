@@ -3,6 +3,9 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+/* text-[#6e5018]
+text-[#d8a33d] */
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

@@ -43,8 +43,8 @@ const PurchaseHistoryTable = ({ artworks }) => {
                     </Table.Header>
 
                     <Table.Body>
-                        {artworks?.map((artwork) => (
-                            <Table.Row key={artwork.artworkId}>
+                        {artworks?.map((artwork, ind) => (
+                            <Table.Row key={ind}>
                                 <Table.Cell>{artwork.title}</Table.Cell>
 
                                 <Table.Cell>${artwork.amount}</Table.Cell>

@@ -19,7 +19,6 @@ const UserPurchaseHistory = async () => {
             }
         })
     )
-    console.log(purchases);
     return (
         <div>
             <div className="mb-8">

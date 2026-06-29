@@ -99,6 +99,7 @@ const PricingPage = () => {
                                 </div>
 
                                 <form action="/api/checkout_sessions" method="POST">
+                                    <input type="hidden" name="type" value={'subscription'} />
                                     <input type='hidden' name='plan_id' value={plan.id} />
                                     <section>
                                         <Button fullWidth className={'mt-4 bg-[#d8a33d] text-black'} type="submit" role="link" isDisabled={plan.isDisabled}>
@@ -106,18 +107,6 @@ const PricingPage = () => {
                                         </Button>
                                     </section>
                                 </form>
-
-                                {/* <Button
-                                    isDisabled={plan.isDisabled}
-                                    fullWidth
-                                    size="lg"
-                                    className={`mt-6 ${plan.popular
-                                        ? "bg-[#D8A33D] text-black font-semibold"
-                                        : "bg-zinc-800 text-white"
-                                        }`}
-                                >
-                                    {plan.buttonText}
-                                </Button> */}
                             </div>
                         </Card>
                     ))}

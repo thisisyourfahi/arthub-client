@@ -4,7 +4,7 @@ import Image from 'next/image';
 import React from 'react';
 
 const Purchase = ({ user, artist, art }) => {
-    const { imageUrl, title, category, price  } = art
+    const { imageUrl, title, category, price } = art
     return (
         <Card className='p-6 text-[#D8A33D] flex flex-row items-center justify-between'>
             <div className="flex gap-3">
@@ -17,9 +17,13 @@ const Purchase = ({ user, artist, art }) => {
             </div>
             <div className='flex flex-col items-center gap-2'>
                 <p className='text-xl font-semibold'>${price}</p>
-                <Button className={'bg-[#D8A33D]'} isDisabled={user?.id === artist?._id || !user}>
-                    Buy Now
-                </Button>
+                <form action='/api/checkout_sessions' method='POST'>
+                    <input type='hidden' name='type' value={'artwork'}/>
+                    <input type='hidden' name='artwork_id' value={art._id}></input>
+                    <Button type='submit' className={'bg-[#D8A33D]'} isDisabled={user?.id === artist?._id || !user}>
+                        Buy Now
+                    </Button>
+                </form>
             </div>
         </Card>
     );

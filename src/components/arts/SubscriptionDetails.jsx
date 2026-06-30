@@ -12,7 +12,7 @@ const SubscriptionDetails = ({
             : 0;
 
     return (
-        <Card className="p-6 space-y-6">
+        <Card className="p-6 space-y-2">
             <div className="flex items-center justify-between">
                 <span className="text-[#D8A33D]">Current Plan</span>
 
@@ -45,20 +45,6 @@ const SubscriptionDetails = ({
                     {Math.max(maxPurchase - alreadyPurchasedCount, 0)} remaining
                 </span>
             </div>
-
-            {progress >= 100 ? (
-                <p className="text-danger text-sm">
-                    You&apos;ve reached your purchase limit.
-                </p>
-            ) : progress >= 80 ? (
-                <p className="text-warning text-sm">
-                    Youre close to your purchase limit.
-                </p>
-            ) : (
-                <p className="text-[#D8A33D] text-sm">
-                    You can still purchase more artworks.
-                </p>
-            )}
         </Card>
     );
 };

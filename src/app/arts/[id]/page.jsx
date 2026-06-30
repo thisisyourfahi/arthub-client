@@ -18,10 +18,11 @@ const ArtDetailsPage = async ({ params }) => {
     const artist = await getUserById(art.artistId);
     const user = await getUserSession();
     const reachedPurchaseLimit = user ? user?.purchaseArtworksId.length >= maximumPurchase[user?.plan] : false;
+    const maxPurchase = maximumPurchase[user?.plan]
     return (
         <div className='space-y-4'>
             <div className='space-y-4'>
-                {user && <SubscriptionDetails maxPurchase={maximumPurchase[user?.plan]} plan={user?.plan}  alreadyPurchasedCount={user?.purchaseArtworksId.length}/> }
+                {user && <SubscriptionDetails maxPurchase={maxPurchase} plan={user?.plan}  alreadyPurchasedCount={user?.purchaseArtworksId.length}/> }
                 <Purchase art={art} artist={artist} user={user} reachedPurchaseLimit={reachedPurchaseLimit} />
             </div>
 

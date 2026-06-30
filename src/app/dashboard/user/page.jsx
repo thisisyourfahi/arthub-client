@@ -8,6 +8,8 @@ const parsePrice = (price) => parseFloat(price) || 0;
 
 const UserDashboardPage = async () => {
     const user = await getUserSession();
+    
+    // fetching all the artwoks from the ids of the user's pur
     const purchasedArtworks = await Promise.all(
         user?.purchaseArtworksId.map(async (id) => {
             const artwork = await getArtworkById(id);

@@ -70,7 +70,7 @@ export default async function PurchaseSuccess({ searchParams }) {
                     </p>
 
                     <Link
-                        href="dashboard/user/bought-artworks" // TODO: Replace with your purchases page
+                        href="/dashboard/user/bought-artworks"
                         className="w-full py-2.5 rounded-xl bg-[#d8a33d] text-black font-semibold text-center"
                     >
                         View My Collection

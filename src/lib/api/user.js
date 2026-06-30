@@ -2,6 +2,10 @@
 
 import { serverFetch } from "../core/server"
 
+export const getAllUsers = async () => {
+    return serverFetch(`/api/users`);
+}
+
 export const getUserById = async (Id) => {
     return serverFetch(`/api/users?Id=${Id}`);
 }

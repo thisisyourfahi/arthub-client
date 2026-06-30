@@ -4,7 +4,7 @@ import AllUsersTableContainer from './AllUsersTableContainer';
 
 const AdminManageUserPage = async () => {
     const users = await getAllUsers();
-    console.log(users); 
+    
     return (
         <div>
             <p>manage-users</p>

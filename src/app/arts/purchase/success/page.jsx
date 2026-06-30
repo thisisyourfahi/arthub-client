@@ -70,14 +70,14 @@ export default async function PurchaseSuccess({ searchParams }) {
                     </p>
 
                     <Link
-                        href="/profile/purchases" // TODO: Replace with your purchases page
+                        href="dashboard/user/bought-artworks" // TODO: Replace with your purchases page
                         className="w-full py-2.5 rounded-xl bg-[#d8a33d] text-black font-semibold text-center"
                     >
                         View My Collection
                     </Link>
 
                     <Link
-                        href="/"
+                        href="/arts"
                         className="mt-4 text-sm text-white/50 hover:text-white transition"
                     >
                         Continue Browsing

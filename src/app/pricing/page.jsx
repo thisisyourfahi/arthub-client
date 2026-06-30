@@ -36,7 +36,7 @@ const pricingPlans = [
 
 const PricingPage = () => {
     return (
-        <section className="min-h-screen bg-black px-6 py-16 rounded-md">
+        <section className="min-h-screen px-6 py-16 rounded-md max-w-7xl mx-auto">
             <div className="mx-auto max-w-7xl">
                 {/* Header */}
                 <div className="mb-14 text-center">

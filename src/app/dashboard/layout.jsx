@@ -4,7 +4,7 @@ import React from 'react';
 
 const DashboardLayout = async ({ children }) => {
     return (
-        <SidebarProvider>
+        <SidebarProvider className={'max-w-7xl mx-auto'}>
             <AppSidebar />
             <main className='w-full'>
                 <SidebarTrigger />

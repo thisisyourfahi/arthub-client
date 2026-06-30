@@ -9,7 +9,7 @@ const ArtistDetailsPage = async ({params}) => {
     const artistInfo = await getUserById(id);
     const artworks = await getArtworksByArtistId(artistInfo._id);
     return (
-        <div>
+        <div className='max-w-7xl mx-auto'>
             <ArtistInfo user={artistInfo} numberOfArtworks={artworks?.length || 0}/>
             <ArtistArtworks artworks={artworks} />
         </div>

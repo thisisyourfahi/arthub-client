@@ -32,7 +32,7 @@ const UserProfilePage = async () => {
     const purchasedCount = user.purchaseArtworksId?.length ?? 0;
 
     return (
-        <div className="min-h-screen bg-[#0f0f0f] text-white px-4 py-10">
+        <div className="min-h-screen max-w-7xl mx-auto bg-[#0f0f0f] text-white px-4 py-10">
             <div className="max-w-2xl mx-auto flex flex-col gap-6">
 
                 {/* Header */}

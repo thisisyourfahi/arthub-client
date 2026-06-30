@@ -1,6 +1,4 @@
 import { addSubscription } from '@/lib/actions/plans'
-import { getUserById } from '@/lib/api/user'
-import { serverFetch } from '@/lib/core/server'
 import { getUserSession } from '@/lib/core/session'
 import { stripe } from '@/lib/stripe'
 import Link from 'next/link'
@@ -32,6 +30,7 @@ export default async function Success({ searchParams }) {
         }
 
         const res = await addSubscription(subInfo);
+        const user = await getUserSession();
 
         return (
             <div className="min-h-screen bg-[#0a0a0f] flex items-center justify-center px-4">
@@ -58,7 +57,7 @@ export default async function Success({ searchParams }) {
 
                     {/* CTA */}
                     <Link
-                        href="/dashboard"
+                        href={`/dashboard/${user?.role}`}
                         className="w-full py-2.5 rounded-xl bg-[#d8a33d] text-white text-sm font-medium transition-colors text-center"
                     >
                         Go to Dashboard

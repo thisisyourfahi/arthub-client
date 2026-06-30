@@ -3,7 +3,7 @@ import { Avatar, Button, Card, Chip, Separator, Skeleton } from "@heroui/react";
 
 const PurchaseSkeleton = () => {
     return (
-        <div className="space-y-4">
+        <div className="space-y-4 max-w-7xl mx-auto">
             <Card className="space-y-4 p-6">
                 <Skeleton className="h-6 w-32 rounded-lg" />
 

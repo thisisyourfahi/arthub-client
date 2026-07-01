@@ -9,7 +9,7 @@ import {
     SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import { getUserSession } from "@/lib/core/session"
-import { ChartLineArrowUp, ClockArrowRotateLeft, FileDollar, LayoutCellsLarge, LayoutSideContent, PersonFill, Persons, TagDollar } from "@gravity-ui/icons"
+import { ChartLineArrowUp, ClockArrowRotateLeft, FileDollar, LayoutCellsLarge, LayoutSideContent, Person, PersonFill, Persons, TagDollar } from "@gravity-ui/icons"
 import { SquarePlus } from "lucide-react"
 import Link from "next/link"
 import { redirect } from "next/navigation"
@@ -35,6 +35,7 @@ const adminNavItems = [
     { href: '/dashboard/admin/manage-artworks', label: 'Manage All Artworks', icon: LayoutCellsLarge },
     { href: '/dashboard/admin/transactions', label: 'View All Transactions', icon: TagDollar },
     { href: '/dashboard/admin/analytics', label: 'Analytics Overview', icon: ChartLineArrowUp },
+    { href: '/dashboard/admin/profile', label: 'Profile', icon: Person },
 ]
 
 const allNavItems = {

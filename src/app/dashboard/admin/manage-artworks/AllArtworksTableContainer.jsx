@@ -11,7 +11,7 @@ const AllArtworksTableContainer = ({ allArtworks }) => {
                             <Table.Column className={'text-[#d8a33d]'} isRowHeader id="title">
                                 Title
                             </Table.Column>
-                            <Table.Column className={'text-[#d8a33d]'} id="category">
+                            <Table.Column className={'text-[#d8a33d]'} id="artist">
                                 Artist Name
                             </Table.Column>
                             <Table.Column className={'text-[#d8a33d]'} id="price">

@@ -10,15 +10,18 @@ const AdminManageArtworks = async () => {
         allArtworks.map(async (art) => {
             const artist = await getUserById(art?.artistId);
             return {
-                ...art, 
+                ...art,
                 artist
             }
         })
     )
     console.log(allArtworksInfo);
     return (
-        <div>
-            <p>manage-artworks</p>
+        <div className='space-y-8'>
+            <div>
+                <h2 className='text-2xl text-[#d8a33d]'>Manage All Artworks</h2>
+                <p className='text-[#6e5018]'>Review the entire platform catalog, track pricing, and remove listings that violate guidelines.</p>
+            </div>
             <AllArtworksTableContainer allArtworks={allArtworksInfo} />
         </div>
     );

@@ -8,14 +8,14 @@ const AllUsersTableContainer = ({ allUsers }) => {
                 <Table.ScrollContainer>
                     <Table.Content aria-label="Artist artworks table" className="min-w-200">
                         <Table.Header >
-                            <Table.Column className={'text-[#d8a33d]'} isRowHeader id="title">
+                            <Table.Column className={'text-[#d8a33d]'} isRowHeader id="name">
                                 Name
                             </Table.Column>
-                            <Table.Column className={'text-[#d8a33d]'} id="category">
+                            <Table.Column className={'text-[#d8a33d]'} id="email">
                                 Email
                             </Table.Column>
 
-                            <Table.Column className={'text-[#d8a33d]'} id="price">
+                            <Table.Column className={'text-[#d8a33d]'} id="role">
                                 Role
                             </Table.Column>
                             <Table.Column className={'text-[#d8a33d]'} id="actions">

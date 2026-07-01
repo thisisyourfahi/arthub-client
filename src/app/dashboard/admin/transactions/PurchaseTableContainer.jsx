@@ -18,7 +18,6 @@ const PurchaseTableContainer = async () => {
             }
         })
     )
-    console.log(purchasesInfo);
     return (
         <div>
             <Table aria-label="Admin view purchases table" >

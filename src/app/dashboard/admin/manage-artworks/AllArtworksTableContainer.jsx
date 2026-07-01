@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table } from '@heroui/react';
+import DeleteArtworkModal from '../../artist/manage-artworks/delete/DeleteArtworkModal';
 
 const AllArtworksTableContainer = ({ allArtworks }) => {
     return (
@@ -29,14 +30,7 @@ const AllArtworksTableContainer = ({ allArtworks }) => {
                                     <Table.Cell>{art?.artist?.name}</Table.Cell>
                                     <Table.Cell>${art?.price}</Table.Cell>
                                     <Table.Cell className={'flex gap-2'}>
-                                        {/* CTA Component will go here later */}
-                                        {/* <Link href={`/arts/${artwork._id}`}>
-                                                        <Button className={'bg-[#D8A33D]'}>
-                                                            <Eye />
-                                                        </Button>
-                                                    </Link>
-                                                    <EditArtworkModal art={artwork} />
-                                                    <DeleteArtworkModal art={artwork} /> */}
+                                        <DeleteArtworkModal art={art} />
                                     </Table.Cell>
                                 </Table.Row>
                             ))}
